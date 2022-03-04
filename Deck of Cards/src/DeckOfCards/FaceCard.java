@@ -1,3 +1,5 @@
+package DeckOfCards;
+
 public class FaceCard extends Card implements Comparable<Card>  {
     Face face;
 
@@ -33,7 +35,7 @@ public class FaceCard extends Card implements Comparable<Card>  {
 
     @Override
     public String toString() {
-        return "FaceCard{" +
+        return "DeckOfCards.FaceCard{" +
                 "suit=" + suit + "," +
                 "face=" + face +
                 '}';

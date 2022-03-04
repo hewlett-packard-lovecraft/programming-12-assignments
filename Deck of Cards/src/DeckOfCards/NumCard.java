@@ -1,3 +1,5 @@
+package DeckOfCards;
+
 public class NumCard extends Card implements Comparable<Card> {
     public NumCard(Suit suit, int value) {
         super(suit, value);
@@ -16,7 +18,7 @@ public class NumCard extends Card implements Comparable<Card> {
 
     @Override
     public String toString() {
-        return "NumCard{" +
+        return "DeckOfCards.NumCard{" +
             "suit=" + suit + "," +
             "number=" + value +
             '}';

@@ -1,3 +1,5 @@
+package DeckOfCards;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -41,7 +43,7 @@ public class CardDeck {
 
     @Override
     public String toString() {
-        return "CardDeck{" +
+        return "DeckOfCards.CardDeck{" +
                 "deck=" + deck +
                 '}';
     }

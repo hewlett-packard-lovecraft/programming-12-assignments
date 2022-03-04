@@ -1,3 +1,5 @@
+package DeckOfCards;
+
 public class Card {
     Suit suit;
     int value;
