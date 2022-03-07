@@ -11,5 +11,8 @@ public class Main {
         System.out.println("Sort deck");
         cardDeck.sort();
         cardDeck.print();
+        cardDeck.splitIntoHands();
+        cardDeck.printHands();
+
     }
 }

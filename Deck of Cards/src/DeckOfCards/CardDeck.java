@@ -5,6 +5,7 @@ import java.util.Collections;
 
 public class CardDeck {
     ArrayList<Card> deck;
+    ArrayList<Card[]> hands;
 
     public CardDeck() {
         this.deck = initialize();
@@ -41,11 +42,35 @@ public class CardDeck {
         }
     }
 
-    @Override
-    public String toString() {
-        return "DeckOfCards.CardDeck{" +
-                "deck=" + deck +
-                '}';
+    public void splitIntoHands() {
+        ArrayList<Card[]> hands = new ArrayList<>();
+        this.shuffle();
+        for (int i = 0; i < deck.size()/4; i++) {
+            Card[] hand = new Card[4];
+            for (int c = 0; c < 4; c++) {
+                hand[c] = deck.get(i * c);
+            }
+            hands.add(hand);
+        }
+
+        this.hands = hands;
     }
 
+    public void printHands() {
+        for (int i = 0; i < hands.size(); i++) {
+            System.out.println("Hand #" + i);
+
+            for (Card card : hands.get(i)) {
+                System.out.println(card.toString());
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "CardDeck{" +
+                "deck=" + deck +
+                ", hands=" + hands +
+                '}';
+    }
 }
