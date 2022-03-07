@@ -5,6 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1fcb699-330f-457a-bc9f-6db9c7ba1c11" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/Sets Assignment/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sets Assignment/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sets Assignment/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sets Assignment/Sets Assignment.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sets Assignment/out/production/Sets Assignment/SetsAssignment/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sets Assignment/out/production/Sets Assignment/resources/illiad" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sets Assignment/src/SetsAssignment/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sets Assignment/src/resources/illiad" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/CardDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/CardDeck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/Main.class" afterDir="false" />
     </list>
@@ -43,7 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Sets Assignment" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -79,6 +88,7 @@
       <updated>1644443605224</updated>
       <workItem from="1644443612012" duration="120000" />
       <workItem from="1646430731077" duration="925000" />
+      <workItem from="1646694169444" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1646691808414</created>
@@ -87,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646691808414</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit">
+      <created>1646694189529</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646694189529</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
