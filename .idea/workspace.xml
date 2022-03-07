@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1fcb699-330f-457a-bc9f-6db9c7ba1c11" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deck of Cards/src/DeckOfCards/CardComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Deck of Cards/src/DeckOfCards/CardComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deck of Cards/src/DeckOfCards/CardDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/Deck of Cards/src/DeckOfCards/CardDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deck of Cards/src/DeckOfCards/FaceCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/Deck of Cards/src/DeckOfCards/FaceCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deck of Cards/src/DeckOfCards/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Deck of Cards/src/DeckOfCards/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Deck of Cards/src/DeckOfCards/NumCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/Deck of Cards/src/DeckOfCards/NumCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/CardComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/CardComparator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/FaceCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/FaceCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/NumCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/NumCard.class" afterDir="false" />
+    <list default="true" id="c1fcb699-330f-457a-bc9f-6db9c7ba1c11" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/CardDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/CardDeck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +80,14 @@
       <workItem from="1644443612012" duration="120000" />
       <workItem from="1646430731077" duration="925000" />
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <created>1646691808414</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646691808414</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,5 +103,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>
