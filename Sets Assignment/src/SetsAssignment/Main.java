@@ -1,37 +1,48 @@
 package SetsAssignment;
 
 import java.io.*;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
-    public static String rstrip(String _line) {
-        String line = _line;
-
-        line.toLowerCase(Locale.ROOT);
-        line = line.replaceAll("[^a-z0-9 ]", ""); // catch all space/nonalphanumeric characters
-        return line;
-    }
-
-    public static void main(String[] args) {
-        File illiad = new File("src/resources/illiad");
-
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(illiad.getAbsolutePath()));
+    public static void solution1(File illiad) {
+        try (Scanner scanner = new Scanner(illiad)){
             HashSet<String> uniqueWords = new HashSet<>();
-            String line = "";
 
-            while ((line = br.readLine()) != null) {
-                line = rstrip(line);
+            while (scanner.hasNext()) {
+                String line = scanner.nextLine().toLowerCase(Locale.ROOT);
+                line = line.replaceAll("[^a-zA-Z0-9\\n ]", "");
                 uniqueWords.addAll(List.of(line.split(" ")));
             }
 
+            //System.out.println(uniqueWords);
             System.out.println(uniqueWords.size());
 
         } catch (IOException e) {
             System.err.println("File Not found!");
         }
+    }
+
+    public static void solution2(File illiad) {
+        try (Scanner scanner = new Scanner(illiad)){
+            HashSet<String> words = new HashSet<>();
+
+            scanner.findAll("\\w+")
+                   .forEach(word -> words.add(word.group(0).toLowerCase(Locale.ROOT)));
+
+            System.out.println(words);
+            System.out.println(words.size());
+
+        } catch (IOException e) {
+            System.err.println("File Not found!");
+        }
+    }
+    public static void main(String[] args) {
+        File illiad = new File("src/resources/illiad");
+
+        solution1(illiad);
+        solution2(illiad);
 
     }
 }
