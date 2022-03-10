@@ -1,16 +1,23 @@
 package CeasarCipher;
 
-import java.util.HashMap;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.util.*;
 
 public class CeaserCipher {
-    HashMap<Character, Integer> alphabet = new HashMap<Character, Integer>(26);
-    int key = 0;
+    HashMap<Character, Integer> alphabet = new HashMap<>(26);
+    HashSet<String> words = new HashSet<>();
+    int key;
 
     public CeaserCipher(int key) {
         this.key = key;
 
         for (int i = 'a'; i <= 'z'; i++) {
-            alphabet.put((char) i, (int) i - 'a');
+            alphabet.put((char) i, i - 'a');
         }
 
     }
@@ -83,7 +90,7 @@ public class CeaserCipher {
             if (newIndex > 25) { newIndex = newIndex % 25; }
             if (newIndex < 0) { newIndex = 25 + newIndex; }
 
-            // HashMap doesn't have a getValue()??!
+            // HashMap doesn't have a getByValue()??!
             for (HashMap.Entry<Character, Integer> entry : alphabet.entrySet())
                 if (entry.getValue() == newIndex)
                     c = entry.getKey();
@@ -97,15 +104,10 @@ public class CeaserCipher {
         }
 
         else if (Character.isDigit(c)) {
-            System.out.println(c);
             int digit = Integer.parseInt(("" + c)) - key;
-            System.out.println(digit);
 
             if (digit > 9) { digit %= 9; }
-            if (digit < 0) { digit = 9 + digit; }
-
-            System.out.println(digit);
-            System.out.println("\n");
+            if (digit < 0) { digit += 9; }
 
             c = ("" + digit).charAt(0);
         }
@@ -113,8 +115,40 @@ public class CeaserCipher {
         return c;
     }
 
+    public void loadWordList() {
+        File wordFile = new File("src/resources/words.txt");
+        HashSet<String> words = new HashSet<>();
+
+        try {
+            words.addAll(Files.readAllLines(wordFile.toPath(), StandardCharsets.UTF_16));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        this.words = words;
+    }
+
     public String bruteforce(String message) {
-      return "";
+        int defaultKey = key;
+        String decryptedMessage = "";
+
+        loadWordList();
+
+        for (int key = 0; key < 26; key++) {
+            this.key = key;
+            String potentialMessage = decrypt(message);
+
+            for (String word : potentialMessage.split(" ")) {
+                if (words.contains(word)) {
+                    return decryptedMessage;
+                }
+            }
+
+        }
+
+        key = defaultKey;
+
+        return "Unable to bruteforce message";
     }
 
 }
