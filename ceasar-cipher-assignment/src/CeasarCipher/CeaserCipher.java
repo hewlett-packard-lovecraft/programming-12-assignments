@@ -1,9 +1,6 @@
 package CeasarCipher;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.*;
@@ -26,13 +23,13 @@ public class CeaserCipher {
         char[] messageChars = message.toCharArray();
 
         for (int i = 0; i < messageChars.length; i++) {
-            messageChars[i] = encode(messageChars[i]);
+            messageChars[i] = encode(messageChars[i], key);
         }
 
         return String.valueOf(messageChars);
     }
 
-    public char encode(char _c) {
+    public char encode(char _c, int key) {
         char c = _c;
 
         if (Character.isLetter(c)) {
@@ -58,10 +55,10 @@ public class CeaserCipher {
 
         else if (Character.isDigit(c)) {
             int digit = Integer.parseInt(("" + c)) + key;
-            if (digit > 9) { digit %= 9; }
-            if (digit < 0) { digit += 9; }
+            if (digit > 9 || digit < 0 ) digit = Math.abs(digit % 9);
 
-            c = ("" + digit).charAt(0);
+            c = Character.forDigit(digit, 10);
+            System.out.println(digit + " -> " + c);
         }
 
         return c;
@@ -71,48 +68,10 @@ public class CeaserCipher {
         char[] messageChars = message.toCharArray();
 
         for (int i = 0; i < messageChars.length; i++) {
-            messageChars[i] = decode(messageChars[i]);
+            messageChars[i] = encode(messageChars[i], -key);
         }
 
         return String.valueOf(messageChars);
-    }
-
-    public char decode(char _c) {
-        char c = _c;
-
-        if (Character.isLetter(c)) {
-            if (Character.isUpperCase(_c)) {
-                c = Character.toLowerCase(_c);
-            }
-
-            int newIndex = alphabet.get(c) - key;
-
-            if (newIndex > 25) { newIndex = newIndex % 25; }
-            if (newIndex < 0) { newIndex = 25 + newIndex; }
-
-            // HashMap doesn't have a getByValue()??!
-            for (HashMap.Entry<Character, Integer> entry : alphabet.entrySet())
-                if (entry.getValue() == newIndex)
-                    c = entry.getKey();
-
-            if (Character.isUpperCase(_c)) {
-                c = Character.toUpperCase(c);
-            }
-
-            return c;
-
-        }
-
-        else if (Character.isDigit(c)) {
-            int digit = Integer.parseInt(("" + c)) - key;
-
-            if (digit > 9) { digit %= 9; }
-            if (digit < 0) { digit += 9; }
-
-            c = ("" + digit).charAt(0);
-        }
-
-        return c;
     }
 
     public void loadWordList() {
@@ -128,8 +87,9 @@ public class CeaserCipher {
         this.words = words;
     }
 
-    public String bruteforce(String message) {
+    public String[] bruteforce(String message) {
         int defaultKey = key;
+        ArrayList<String> potentialMessages = new ArrayList<>();
 
         loadWordList();
 
@@ -139,7 +99,7 @@ public class CeaserCipher {
 
             for (String word : potentialMessage.split(" ")) {
                 if (words.contains(word)) {
-                    return potentialMessage;
+                    potentialMessages.add(potentialMessage);
                 }
             }
 
@@ -147,7 +107,7 @@ public class CeaserCipher {
 
         key = defaultKey;
 
-        return "Unable to bruteforce message";
+        return potentialMessages.toArray(new String[0]);
     }
 
 }

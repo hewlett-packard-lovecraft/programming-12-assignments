@@ -1,4 +1,5 @@
 package CeasarCipher;
+import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
@@ -14,7 +15,7 @@ public class Main {
         System.out.println("message: " + message);
         System.out.println(encryptedMessage);
         System.out.println(decryptedMessage);
-        System.out.println("bruteforced message: " + cipher.bruteforce(encryptedMessage));
+        System.out.println("Potential bruteforce messages: " + Arrays.toString(cipher.bruteforce(encryptedMessage)));
 
     }
 }
