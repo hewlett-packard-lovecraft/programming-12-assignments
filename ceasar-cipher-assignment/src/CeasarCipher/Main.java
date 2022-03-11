@@ -1,16 +1,20 @@
 package CeasarCipher;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
     public static void main(String[] args) {
-        CeaserCipher cipher = new CeaserCipher(5);
-        String message = "caesar cipher 720";
+        int key = ThreadLocalRandom.current().nextInt(0, 25 + 1);
+        String message = "Caesar cipher 720";
+
+        CeaserCipher cipher = new CeaserCipher(key);
         String encryptedMessage = cipher.encrypt(message);
         String decryptedMessage = cipher.decrypt(encryptedMessage);
 
-        System.out.println(message);
+        System.out.println("key: " + key);
+        System.out.println("message: " + message);
         System.out.println(encryptedMessage);
         System.out.println(decryptedMessage);
-        System.out.println(cipher.bruteforce(decryptedMessage));
+        System.out.println("bruteforced message: " + cipher.bruteforce(encryptedMessage));
 
     }
 }

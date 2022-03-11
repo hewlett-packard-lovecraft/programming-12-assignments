@@ -122,7 +122,7 @@ public class CeaserCipher {
         try {
             words.addAll(Files.readAllLines(wordFile.toPath(), StandardCharsets.UTF_16));
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
 
         this.words = words;
@@ -130,7 +130,6 @@ public class CeaserCipher {
 
     public String bruteforce(String message) {
         int defaultKey = key;
-        String decryptedMessage = "";
 
         loadWordList();
 
@@ -140,7 +139,7 @@ public class CeaserCipher {
 
             for (String word : potentialMessage.split(" ")) {
                 if (words.contains(word)) {
-                    return decryptedMessage;
+                    return potentialMessage;
                 }
             }
 
