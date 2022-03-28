@@ -54,11 +54,12 @@ public class CeaserCipher {
         }
 
         else if (Character.isDigit(c)) {
-            int digit = Integer.parseInt(("" + c)) + key;
-            if (digit > 9 || digit < 0 ) digit = Math.abs(digit % 9);
+            int digit = Integer.parseInt(("" + c)) + (key % 9);
+
+            if (digit > 9) { digit = digit % 9; }
+            if (digit < 0) { digit = 9 + digit; }
 
             c = Character.forDigit(digit, 10);
-            System.out.println(digit + " -> " + c);
         }
 
         return c;
