@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1fcb699-330f-457a-bc9f-6db9c7ba1c11" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/Sets Assignment/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sets Assignment/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sets Assignment/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sets Assignment/Sets Assignment.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sets Assignment/out/production/Sets Assignment/SetsAssignment/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sets Assignment/out/production/Sets Assignment/resources/illiad" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sets Assignment/src/SetsAssignment/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sets Assignment/src/resources/illiad" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/CardDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/CardDeck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/programming-12-assignments/DeckOfCards/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +79,7 @@
       <workItem from="1644443612012" duration="120000" />
       <workItem from="1646430731077" duration="925000" />
       <workItem from="1646694169444" duration="27000" />
+      <workItem from="1648674364533" duration="47000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1646691808414</created>
