@@ -40,7 +40,6 @@ public class Main {
                     nextIterationQueue.add(childNode);
                 }
 
-
             }
 
             graph.get(node.getKey() - 1).setVisited(true);
