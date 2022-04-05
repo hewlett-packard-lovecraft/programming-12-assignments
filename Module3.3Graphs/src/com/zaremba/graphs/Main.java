@@ -17,36 +17,39 @@ public class Main {
     private static void BFS() {
         ArrayList<Node> queue = new ArrayList<>();
 
-        for (int childNode : graph.get(0).getNodes()) {
+        Node rootNode = graph.get(0);
+
+        System.out.println("On " + rootNode);
+        for (int childNode : rootNode.getNodes()) {
+            System.out.println("Added " + childNode + " to queue");
             queue.add(graph.get(childNode));
         }
 
-        BFSHelper(queue);
+        BFSHelper(queue, "1");
     }
 
-    private static void BFSHelper(ArrayList<Node> queue) {
+    private static void BFSHelper(ArrayList<Node> queue, String path) {
         if (queue.size() == 0)
             return;
 
         ArrayList<Node> nextIterationQueue = new ArrayList<>();
 
         for (Node node : queue) {
-            System.out.println("Visiting " + node.toString());
-
-            for (int c = 0; c <= node.getNodes().size(); c++) {
-                Node childNode = graph.get(c);
+            System.out.println("On " + node);
+            for (int c : node.getNodes()) {
+                Node childNode = graph.get(c-1);
 
                 if (!childNode.isVisited()) {
+                    System.out.println("Added " + childNode + " to queue");
                     nextIterationQueue.add(childNode);
                 }
-
 
             }
 
             graph.get(node.getKey() - 1).setVisited(true);
         }
 
-        BFSHelper(nextIterationQueue);
+        BFSHelper(nextIterationQueue, path);
     }
 
     private static void setupTree() throws FileNotFoundException {
