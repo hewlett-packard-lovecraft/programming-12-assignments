@@ -25,10 +25,10 @@ public class Main {
             queue.add(graph.get(childNode));
         }
 
-        BFSHelper(queue, "1");
+        BFSHelper(queue);
     }
 
-    private static void BFSHelper(ArrayList<Node> queue, String path) {
+    private static void BFSHelper(ArrayList<Node> queue) {
         if (queue.size() == 0)
             return;
 
@@ -49,7 +49,7 @@ public class Main {
             graph.get(node.getKey() - 1).setVisited(true);
         }
 
-        BFSHelper(nextIterationQueue, path);
+        BFSHelper(nextIterationQueue);
     }
 
     private static void setupTree() throws FileNotFoundException {
