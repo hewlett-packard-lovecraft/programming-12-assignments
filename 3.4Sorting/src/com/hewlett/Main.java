@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
-    public static ArrayList<Integer> mergeSort(int[] a, int[] b, int indexA, int indexB, ArrayList<Integer> c) {
+    public static ArrayList<Integer> merge(int[] a, int[] b, int indexA, int indexB, ArrayList<Integer> c) {
         if (c.size() == a.length + b.length) {
             return c;
         } else if (a.length == indexA) {
@@ -37,7 +37,7 @@ public class Main {
             }
             System.out.println(indexA + " " + indexB + " " + c);
 
-            return mergeSort(a, b, indexA, indexB, c);
+            return merge(a, b, indexA, indexB, c);
         }
     }
 
@@ -46,6 +46,6 @@ public class Main {
         int[] b = {84, 81, 35, 25, 14, 11, 8, 5, 2};
         ArrayList<Integer> c = new ArrayList<>();
 
-        mergeSort(a, b, 0, 0, c);
+        merge(a, b, 0, 0, c);
     }
 }
