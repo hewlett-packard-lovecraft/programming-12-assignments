@@ -1,0 +1,37 @@
+Index: .idea/runConfigurations.xml
+===================================================================
+diff --git a/.idea/runConfigurations.xml b/.idea/runConfigurations.xml
+deleted file mode 100644
+--- a/.idea/runConfigurations.xml	(revision 1faa0844d546471d17c5c1dfff85a3f2bd0a96a2)
++++ /dev/null	(revision 1faa0844d546471d17c5c1dfff85a3f2bd0a96a2)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="RunConfigurationProducerService">
+-    <option name="ignoredProducers">
+-      <set>
+-        <option value="com.android.tools.idea.compose.preview.runconfiguration.ComposePreviewRunConfigurationProducer" />
+-      </set>
+-    </option>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: Sets Assignment/src/SetsAssignment/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package SetsAssignment;\n\nimport java.io.*;\nimport java.util.*;\nimport java.util.regex.Matcher;\nimport java.util.regex.Pattern;\n\npublic class Main {\n    public static void solution1(File illiad) {\n        try (Scanner scanner = new Scanner(illiad)){\n            HashSet<String> uniqueWords = new HashSet<>();\n\n            while (scanner.hasNext()) {\n                String line = scanner.nextLine().toLowerCase(Locale.ROOT);\n                line = line.replaceAll(\"[^a-zA-Z0-9\\\\n ]\", \"\");\n                uniqueWords.addAll(List.of(line.split(\" \")));\n            }\n\n            //System.out.println(uniqueWords);\n            System.out.println(uniqueWords.size());\n\n        } catch (IOException e) {\n            System.err.println(\"File Not found!\");\n        }\n    }\n\n    public static void solution2(File illiad) {\n        try (Scanner scanner = new Scanner(illiad)){\n            HashSet<String> words = new HashSet<>();\n\n            scanner.findAll(\"\\\\w+\")\n                   .forEach(word -> words.add(word.group(0).toLowerCase(Locale.ROOT)));\n\n            System.out.println(words);\n            System.out.println(words.size());\n\n        } catch (IOException e) {\n            System.err.println(\"File Not found!\");\n        }\n    }\n    public static void main(String[] args) {\n        File illiad = new File(\"src/resources/illiad\");\n\n        solution1(illiad);\n        solution2(illiad);\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Sets Assignment/src/SetsAssignment/Main.java b/Sets Assignment/src/SetsAssignment/Main.java
+--- a/Sets Assignment/src/SetsAssignment/Main.java	(revision 1faa0844d546471d17c5c1dfff85a3f2bd0a96a2)
++++ b/Sets Assignment/src/SetsAssignment/Main.java	(date 1646782285416)
+@@ -12,7 +12,7 @@
+ 
+             while (scanner.hasNext()) {
+                 String line = scanner.nextLine().toLowerCase(Locale.ROOT);
+-                line = line.replaceAll("[^a-zA-Z0-9\\n ]", "");
++                line = line.replaceAll("[^a-zA-Z0-9\\n ]", " ");
+                 uniqueWords.addAll(List.of(line.split(" ")));
+             }
+ 
