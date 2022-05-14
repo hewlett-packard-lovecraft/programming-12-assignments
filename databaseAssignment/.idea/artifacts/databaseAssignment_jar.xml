@@ -1,12 +1,12 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="databaseAssignment:jar">
+  <artifact type="jar" name="databaseAssignment:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/databaseAssignment_jar</output-path>
     <root id="archive" name="databaseAssignment.jar">
       <element id="module-output" name="databaseAssignment" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/derby/derbyshared/10.15.2.0/derbyshared-10.15.2.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/derby/derbyclient/10.15.2.0/derbyclient-10.15.2.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/derby/derbyshared/10.15.2.0/derbyshared-10.15.2.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

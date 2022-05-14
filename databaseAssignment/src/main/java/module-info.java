@@ -1,4 +1,4 @@
-module databaseAssignment {
+module com.haoming.databaseAssignment {
     requires org.apache.derby.engine;
     requires org.apache.derby.commons;
     requires org.apache.commons.io;

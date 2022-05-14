@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.apache.commons.io.FileUtils;
 
 public class Directory {
-    public ArrayList<RetrievedFile> fileList = null;
+    public ArrayList<RetrievedFile> fileList = new ArrayList<>();
     public String dirName = "";
     private File dir = null;
 

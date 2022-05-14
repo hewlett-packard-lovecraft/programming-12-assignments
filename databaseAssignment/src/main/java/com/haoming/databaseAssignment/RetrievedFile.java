@@ -12,7 +12,7 @@ public class RetrievedFile {
     public long sizeInBytes = 0;
 
     public RetrievedFile(File file) {
-        name = FilenameUtils.getExtension(file.getName());
+        name = file.getName();
         path = file.getPath();
         extension = FilenameUtils.getExtension(String.valueOf(file));
         sizeInBytes = FileUtils.sizeOf(file);

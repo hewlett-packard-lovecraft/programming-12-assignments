@@ -1,9 +1,10 @@
 package com.haoming.databaseAssignment;
 
 import java.sql.*;
+import java.util.Arrays;
 
 public class DatabaseHandler {
-    private static final String DB_url = "jdbc:derby:database/DerbyDemo;create=true";
+    private static final String DB_url = "jdbc:derby:database/derbydemo;create=true";
     private static Connection connection = null;
     private static Statement stmt = null;
 
@@ -11,38 +12,67 @@ public class DatabaseHandler {
         createConnection();
     }
 
+    public void showTables() {
+        ResultSet resultSet = execQuery("select st.tablename  from sys.systables st LEFT OUTER join sys.sysschemas ss on (st.schemaid = ss.schemaid) where ss.schemaname ='APP'");
+
+        try {
+            ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
+            final int columnCount = resultSetMetaData.getColumnCount();
+
+            while (resultSet.next()) {
+                Object[] values = new Object[columnCount];
+                for (int i = 1; i <= columnCount; i++) {
+                    values[i - 1] = resultSet.getObject(i);
+                }
+                System.out.println(Arrays.toString(values));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void addDir(Directory directory) {
         addDirTable(directory);
 
         for (RetrievedFile file : directory.fileList) {
-            addFile(file, directory.dirName.toUpperCase());
+            addFile(file, directory.dirName);
         }
 
     }
 
     public void addDirTable(Directory dir) {
-        String table_name = dir.dirName.toUpperCase();
+        String table_name = dir.dirName;
+        System.out.println("Adding table " + table_name);
 
         String st = "CREATE TABLE " + table_name + " ( "
                 + "file_name varchar(255), "
                 + "file_path varchar(255), "
                 + "extension varchar(255), "
-                + "size_in_bytes bigint,"
+                + "size_in_bytes bigint "
                 + ")";
+
+        System.out.println(st);
 
         execAction(st);
     }
 
     public void addFile(RetrievedFile file, String dirName) {
-        if(file.isFlagged())
-            return;
+        System.out.println("Adding '" + file.name + "' to table " + dirName);
 
-        String st = "INSERT INTO " + dirName + " VALUES (" +
-                "'" + file.name + "," +
-                "'" + file.path + "," +
-                "'" + file.extension + "," +
-                "'" + file.sizeInBytes + "," +
+        if(file.isFlagged()) {
+            System.out.println("One or more fields are empty");
+            return;
+        }
+
+        String st = "INSERT INTO " + dirName + " VALUES ( " +
+                "'" + file.name + "', " +
+                "'" + file.path + "', " +
+                "'" + file.extension + "', " +
+                " " + file.sizeInBytes + " " +
                 ")";
+
+        System.out.println(st);
 
         execAction(st);
     }
@@ -54,7 +84,7 @@ public class DatabaseHandler {
             return true;
 
         } catch (SQLException e) {
-            System.err.println("exception at execQuery " + e.getLocalizedMessage());
+            e.printStackTrace();
             return false;
         }
     }
@@ -66,7 +96,7 @@ public class DatabaseHandler {
             stmt = connection.createStatement();
             resultSet = stmt.executeQuery(query);
         } catch (SQLException e) {
-            System.err.println("exception at execQuery " + e.getLocalizedMessage());
+            e.printStackTrace();
             return null;
         }
 

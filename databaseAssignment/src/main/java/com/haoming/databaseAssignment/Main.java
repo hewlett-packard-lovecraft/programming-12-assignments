@@ -8,5 +8,7 @@ public class Main {
             Directory dir = new Directory(path);
             dbhandler.addDir(dir);
         }
+
+        dbhandler.showTables();
     }
 }
