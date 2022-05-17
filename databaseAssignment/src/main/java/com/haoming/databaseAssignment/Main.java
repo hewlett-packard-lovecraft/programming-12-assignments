@@ -6,6 +6,8 @@ public class Main {
 
         for (String path : args) {
             Directory dir = new Directory(path);
+            //dir.dirName.replaceAll("[^a-zA-Z0-9]", "_"); // replace invalid chars with valid char
+
             dbhandler.addDir(dir);
         }
 

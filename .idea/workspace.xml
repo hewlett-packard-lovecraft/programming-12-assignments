@@ -43,7 +43,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/haoming/IdeaProjects/programming-12-assignments/databaseAssignment"
+    "last_opened_file_path": "/home/haoming/IdeaProjects/programming-12-assignments/Sets Assignment",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="RunManager">
@@ -80,6 +84,8 @@
       <workItem from="1648674364533" duration="47000" />
       <workItem from="1652528542933" duration="79000" />
       <workItem from="1652555273099" duration="22000" />
+      <workItem from="1652570411100" duration="20000" />
+      <workItem from="1652746390888" duration="796000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1646691808414</created>
@@ -102,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652528612177</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="asdasdfasdfasdf">
+      <created>1652570423684</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652570423684</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

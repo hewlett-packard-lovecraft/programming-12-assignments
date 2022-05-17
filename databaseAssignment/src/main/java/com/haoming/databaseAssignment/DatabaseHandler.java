@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.Arrays;
 
 public class DatabaseHandler {
-    private static final String DB_url = "jdbc:derby:database/derbydemo;create=true";
+    private static final String DB_url = "jdbc:derby:database/DerbyDemo;create=true";
     private static Connection connection = null;
     private static Statement stmt = null;
 
@@ -13,22 +13,31 @@ public class DatabaseHandler {
     }
 
     public void showTables() {
-        ResultSet resultSet = execQuery("select st.tablename  from sys.systables st LEFT OUTER join sys.sysschemas ss on (st.schemaid = ss.schemaid) where ss.schemaname ='APP'");
-
         try {
-            ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
-            final int columnCount = resultSetMetaData.getColumnCount();
+            DatabaseMetaData databaseMetaData = connection.getMetaData();
+            ResultSet tableNames = databaseMetaData.getTables(null, null, null, new String[]{"TABLE"});
 
-            while (resultSet.next()) {
-                Object[] values = new Object[columnCount];
-                for (int i = 1; i <= columnCount; i++) {
-                    values[i - 1] = resultSet.getObject(i);
+            while (tableNames.next()) {
+                String table_name = tableNames.getString("TABLE_NAME");
+                ResultSet tableValues = execQuery("SELECT * FROM " + table_name);
+
+                while (tableValues.next()) {
+
+                    System.out.println(
+                            "Table: " + table_name + "\n" +
+                            "file_name " + tableValues.getString("file_path") + "\n" +
+                                    "file_name " + tableValues.getString("file_name") + "\n" +
+                                    "file_path " + tableValues.getString("file_path") + "\n" +
+                                    "extension " + tableValues.getString("extension") + "\n" +
+                                    "size_in_bytes " + tableValues.getString("size_in_bytes") + "\n"
+                    );
                 }
-                System.out.println(Arrays.toString(values));
+
             }
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            tableNames.close();
+        } catch (SQLException e){
+            e.printStackTrace();
         }
     }
 
