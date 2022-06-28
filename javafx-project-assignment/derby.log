@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Jun 28 02:41:29 PDT 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0181-a9af-f464-000015a78320 
+on database directory /home/haoming/IdeaProjects/programming-12-assignments/javafx-project-assignment/database/DerbyDemo with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@1be6f5c3 
+Loaded from file:/home/haoming/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=17.0.2+8-86
+user.dir=/home/haoming/IdeaProjects/programming-12-assignments/javafx-project-assignment
+os.name=Linux
+os.arch=amd64
+os.version=5.18.6-200.fc36.x86_64
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

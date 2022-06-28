@@ -8,6 +8,9 @@ public class DatabaseHandler {
     private static Connection connection = null;
     private static Statement stmt = null;
 
+    /**
+     * Class constructor
+     */
     public DatabaseHandler() {
         createConnection();
     }
